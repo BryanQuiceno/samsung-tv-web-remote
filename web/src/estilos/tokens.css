@@ -1,0 +1,25 @@
+/* Los colores salen del propio aparato: en un salon a oscuras la unica luz es
+   la que emite la pantalla. Por eso "encendida" es el ambar calido de un panel
+   iluminado y "apagada" es el gris azulado de un cristal muerto. */
+:root {
+  --noche:        #0A0C0F;   /* el cuarto a oscuras */
+  --panel:        #12161B;   /* el cuerpo del mando */
+  --relieve:      #1B212A;   /* una tecla en reposo */
+  --relieve-vivo: #232C37;   /* una tecla pulsada */
+  --borde:        #262E39;
+
+  --brillo:       #F5C451;   /* pantalla encendida */
+  --brillo-suave: #7A5F27;
+  --frio:         #55606E;   /* pantalla apagada */
+  --aviso:        #D9544D;
+
+  --texto:        #E9EBEE;
+  --texto-tenue:  #8792A0;
+
+  --radio:        18px;
+  --radio-tecla:  14px;
+
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --cuerpo:  "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --medida:  "IBM Plex Mono", ui-monospace, monospace;
+}

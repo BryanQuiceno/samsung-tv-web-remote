@@ -1,0 +1,35 @@
+.selector {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+.selector::-webkit-scrollbar { display: none; }
+
+.selector__tele,
+.selector__anadir {
+  flex: none;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--borde);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.selector__tele {
+  background: var(--panel);
+  color: var(--texto-tenue);
+}
+.selector__tele[aria-current="true"] {
+  background: var(--relieve);
+  border-color: var(--brillo-suave);
+  color: var(--texto);
+}
+.selector__tele:active { background: var(--relieve-vivo); }
+
+.selector__anadir {
+  border-style: dashed;
+  color: var(--texto-tenue);
+}
+.selector__anadir:active { background: var(--relieve); }

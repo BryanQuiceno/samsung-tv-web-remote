@@ -1,0 +1,24 @@
+# Example systemd unit. Edit User/Group and the three paths, then:
+#   sudo cp mando-tv.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now mando-tv
+[Unit]
+Description=Samsung TV web remote (web UI + API)
+Documentation=https://github.com/BryanQuiceno/samsung-tv-web-remote
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tv
+Group=tv
+WorkingDirectory=/opt/samsung-tv-web-remote/servidor
+# Loopback because a reverse proxy sits in front (see Caddyfile).
+# Without a proxy, use MANDO_HOST=0.0.0.0 and open http://<server>:8099
+Environment=MANDO_PUERTO=8099
+Environment=MANDO_HOST=127.0.0.1
+ExecStart=/opt/samsung-tv-web-remote/.venv/bin/python3 /opt/samsung-tv-web-remote/servidor/servir.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

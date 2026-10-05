@@ -1,0 +1,29 @@
+# Example Caddy config: a doorman on port 80 that hands out by name.
+#
+# No certificates on purpose: this lives on the home LAN only and the name is
+# not a public one. `auto_https off` stops Caddy from trying to obtain a public
+# certificate for a name that does not exist outside.
+{
+	admin off
+	auto_https off
+}
+
+# The remote, by name. Needs a DNS rewrite in your LAN resolver:
+#   mando.casa -> <this server's IP>
+# Do not use a .dev or .app name: browsers force HTTPS on those (HSTS preload).
+http://mando.casa {
+	reverse_proxy 127.0.0.1:8099
+}
+
+# The same remote by address and port, which ALWAYS works even when the LAN
+# DNS does not reach a device: http://<this server's IP>:8080
+:8080 {
+	reverse_proxy 127.0.0.1:8099
+}
+
+# If something else already owns port 80 on this machine, move it to another
+# port and send everything else to it here:
+#
+# http:// {
+# 	reverse_proxy 127.0.0.1:8081
+# }

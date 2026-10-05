@@ -1,0 +1,176 @@
+.alta {
+  padding: 24px 22px 26px;
+  border-radius: var(--radio);
+  border: 1px solid var(--borde);
+  background: linear-gradient(168deg, var(--panel), #0E1216);
+}
+
+.alta__cabecera {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.alta__paso {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--texto-tenue);
+}
+
+.alta__cancelar {
+  font-size: 14px;
+  color: var(--texto-tenue);
+  padding: 4px 0 4px 12px;
+}
+
+.alta__titulo {
+  margin: 0 0 10px;
+  font-family: var(--display);
+  font-variation-settings: "wght" 640, "wdth" 88;
+  font-size: clamp(1.7rem, 8vw, 2.2rem);
+  line-height: 1.05;
+}
+
+.alta__texto {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--texto-tenue);
+}
+.alta__texto strong { color: var(--texto); font-weight: 500; }
+
+.alta__medida { font-family: var(--medida); }
+
+.alta__nota {
+  margin: 14px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--texto-tenue);
+}
+
+/* Una linea que respira mientras se espera: buscar tarda segundos y el permiso
+   depende de alguien que esta en el sofa. */
+.alta__latido {
+  height: 3px;
+  margin: 22px 0 4px;
+  border-radius: 2px;
+  background: var(--brillo);
+  transform-origin: left;
+  animation: latir 1.8s ease-in-out infinite;
+}
+@keyframes latir {
+  0%, 100% { transform: scaleX(0.08); opacity: 0.5; }
+  50%      { transform: scaleX(1);    opacity: 1; }
+}
+
+.alta__lista {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.alta__hallado {
+  width: 100%;
+  display: grid;
+  gap: 2px;
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: var(--radio-tecla);
+  background: var(--relieve);
+  border: 1px solid var(--borde);
+}
+.alta__hallado:active:not(:disabled) { background: var(--relieve-vivo); }
+.alta__hallado:disabled { opacity: 0.5; cursor: default; }
+
+.alta__hallado-nombre { font-size: 17px; }
+.alta__hallado-modelo { font-size: 13px; color: var(--texto-tenue); }
+.alta__hallado-nota {
+  font-family: var(--medida);
+  font-size: 11px;
+  color: var(--texto-tenue);
+}
+
+.alta__etiqueta {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--texto-tenue);
+}
+
+.alta__campo {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border-radius: var(--radio-tecla);
+  border: 1px solid var(--borde);
+  background: var(--noche);
+  color: var(--texto);
+  font-family: var(--cuerpo);
+  font-size: 17px;      /* por debajo de 16 el iPhone hace zoom al tocar el campo */
+}
+.alta__campo--medida { font-family: var(--medida); font-size: 16px; }
+.alta__campo::placeholder { color: var(--frio); }
+
+.alta__fila {
+  display: flex;
+  gap: 8px;
+}
+.alta__fila .alta__campo { flex: 1; }
+
+.alta__boton {
+  padding: 13px 18px;
+  border-radius: var(--radio-tecla);
+  background: var(--relieve);
+  border: 1px solid var(--borde);
+  font-size: 15px;
+}
+.alta__boton:active:not(:disabled) { background: var(--relieve-vivo); }
+.alta__boton:disabled { opacity: 0.45; cursor: default; }
+
+.alta__boton--principal {
+  width: 100%;
+  margin-top: 14px;
+  border-color: var(--brillo-suave);
+  color: var(--brillo);
+  font-size: 16px;
+}
+
+.alta__secundario {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 14px;
+  color: var(--texto-tenue);
+}
+
+.alta__fallo {
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  border-radius: var(--radio-tecla);
+  font-size: 13px;
+  line-height: 1.45;
+  background: rgba(217, 84, 77, 0.12);
+  border: 1px solid rgba(217, 84, 77, 0.4);
+  color: #F0B3AF;
+}
+
+.alta__a-mano {
+  margin-top: 6px;
+  border-top: 1px solid var(--borde);
+  padding-top: 12px;
+}
+.alta__a-mano summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+  color: var(--texto-tenue);
+  padding: 4px 0;
+}
+.alta__a-mano summary::-webkit-details-marker { display: none; }
+.alta__a-mano[open] summary { margin-bottom: 10px; }

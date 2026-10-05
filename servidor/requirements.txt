@@ -1,0 +1,4 @@
+# Python 3.10 or newer.
+fastapi>=0.110
+uvicorn>=0.29
+samsungtvws>=3.0,<4

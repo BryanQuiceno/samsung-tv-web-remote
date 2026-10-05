@@ -1,0 +1,59 @@
+.vigia {
+  padding: 18px 20px 20px;
+  border-radius: var(--radio);
+  border: 1px solid var(--borde);
+  background: var(--panel);
+}
+
+.vigia__cabecera {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.vigia__titulo {
+  font-family: var(--display);
+  font-variation-settings: "wght" 620, "wdth" 84;
+  font-size: 15px;
+}
+
+.vigia__rango {
+  font-family: var(--medida);
+  font-size: 11px;
+  color: var(--texto-tenue);
+}
+
+.vigia__tira {
+  display: flex;
+  gap: 2px;
+  height: 26px;
+  align-items: flex-end;
+}
+
+.vigia__marca {
+  flex: 1;
+  border-radius: 1px;
+  transition: height 300ms ease, background 300ms ease;
+}
+.vigia__marca--responde  { height: 100%; background: var(--brillo); }
+.vigia__marca--calla     { height: 22%;  background: var(--frio); }
+.vigia__marca--sin-dato  { height: 8%;   background: var(--relieve); opacity: 0.6; }
+
+.vigia__eje {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-family: var(--medida);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--texto-tenue);
+  opacity: 0.7;
+}
+
+.vigia__leyenda {
+  margin: 12px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--texto-tenue);
+}

@@ -1,0 +1,9 @@
+# estado vivo del vigia: cambia cada minuto, no es codigo
+servidor/datos/
+# secreto de emparejamiento con el televisor
+token.txt
+node_modules/
+web/dist/
+__pycache__/
+*.pyc
+.venv/

@@ -1,0 +1,86 @@
+.volumen {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "balancin lectura"
+    "balancin silencio";
+  gap: 14px 18px;
+  padding: 18px;
+  border-radius: var(--radio);
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  align-items: center;
+}
+.volumen[data-dormido="true"] { opacity: 0.45; }
+
+.volumen__balancin {
+  grid-area: balancin;
+  display: flex;
+  flex-direction: column;
+  width: 84px;
+  border-radius: 42px;
+  background: var(--relieve);
+  overflow: hidden;
+}
+
+.volumen__tecla {
+  display: grid;
+  place-items: center;
+  height: 76px;
+}
+.volumen__tecla:active:not(:disabled) { background: var(--relieve-vivo); }
+.volumen__tecla svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: var(--texto);
+  stroke-width: 2;
+}
+
+.volumen__separador {
+  height: 1px;
+  background: var(--borde);
+  margin: 0 18px;
+}
+
+.volumen__lectura {
+  grid-area: lectura;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.volumen__cifra {
+  font-family: var(--medida);
+  font-size: 40px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.volumen__dormido {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--texto-tenue);
+  max-width: 22ch;
+}
+
+.volumen__unidad {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--texto-tenue);
+}
+
+.volumen__silencio {
+  grid-area: silencio;
+  justify-self: start;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--borde);
+  font-size: 13px;
+  color: var(--texto-tenue);
+}
+.volumen__silencio[data-silenciado="true"] {
+  color: var(--noche);
+  background: var(--brillo);
+  border-color: var(--brillo);
+}
